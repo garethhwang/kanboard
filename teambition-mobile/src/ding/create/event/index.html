@@ -1,0 +1,66 @@
+<ion-view class="create-event-view"
+          ng-controller="CreateEventView as CreateEventCtrl">
+  <ion-content>
+    <div class="list">
+      <div class="item item-input event-title">
+        <input type="text" placeholder="日程标题" ng-model="CreateEventCtrl.title">
+      </div>
+      <div class="data-picker-wrap">
+        <div class="item event-startTime event-time">
+          {{CreateEventCtrl.startDate | formatDate : 'MoDo dddd'}}
+          <input type="date"
+                ng-model="CreateEventCtrl.startDate"
+                ng-model-options="{ getterSetter: true }">
+        </div>
+        <div class="item event-endTime event-time">
+          {{CreateEventCtrl.endDate | formatDate : 'MoDo dddd'}}
+          <input type="date"
+                ng-model="CreateEventCtrl.endDate"
+                ng-model-options="{ getterSetter: true }">
+        </div>
+        <div class="item event-startTime event-time event-date-time">
+          {{CreateEventCtrl.startDate | formatDate : 'a hh:mm'}}
+          <input type="datetime-local"
+                 ng-model="CreateEventCtrl.startDate"
+                 ng-model-options="{ getterSetter: true }">
+        </div>
+        <div class="item event-endTime event-time event-date-time">
+          {{CreateEventCtrl.endDate | formatDate : 'a hh:mm'}}
+          <input type="datetime-local"
+                 ng-model="CreateEventCtrl.endDate"
+                 ng-model-options="{ getterSetter: true }">
+        </div>
+      </div>
+      <div class="item list-title">
+        参与者
+      </div>
+      <div class="ionic">
+        <a class="item item-icon-left"
+           on-tap="CreateEventCtrl.openInvolve()">
+          <i class="icon icon-users"></i>
+          <span ng-bind="CreateEventCtrl.getInvolveNames()"></span>
+        </a>
+      </div>
+      <div class="item list-title">
+        更多
+      </div>
+      <div class="ionic more-info-wrap">
+        <label class="item item-input" on-tap="CreateEventCtrl.openLocation()">
+          <i class="icon icon-location"></i>
+          <input type="text" placeholder="添加地点" ng-model="CreateEventCtrl.location">
+        </label>
+        <a class="item item-icon-left" on-tap="CreateEventCtrl.openNote()">
+          <i class="icon icon-book"></i>
+          <span>{{CreateEventCtrl.content}}<span ng-if="!CreateEventCtrl.content">添加备注</span></span>
+        </a>
+        <a class="item item-icon-left" on-tap="CreateEventCtrl.openRecurrence()">
+          <i class="icon icon-review"></i>
+          <span ng-bind="CreateEventCtrl.recurrenceName"
+                ng-if="CreateEventCtrl.recurrenceName">
+          </span>
+          <span ng-if="!CreateEventCtrl.recurrenceName">设置重复周期</span>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

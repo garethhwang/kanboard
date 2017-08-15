@@ -1,0 +1,41 @@
+// Global reference
+@import "../../../../less/reference.less";
+
+.subtaskView {
+  border-top: solid 1px #DDD;
+  background-color: #f7f7f7;
+  .subtasks-wrap {
+    margin-top: 15px;
+    &.has-min-height {
+      min-height: 200px;
+    }
+    .subtask-avatar {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 20px;
+      top: 14px;
+      border-radius: 50%;
+    }
+  }
+
+  .button {
+    width: 94%;
+    margin-left: 3%;
+  }
+
+  .empty-warn {
+    &.subtask {
+      width: 66px;
+      height: 65px;
+    }
+    &.empty-warn-text {
+      top: 230px;
+      text-align: center;
+      p {
+        color: @gray;
+        margin: 0;
+      }
+    }
+  }
+}

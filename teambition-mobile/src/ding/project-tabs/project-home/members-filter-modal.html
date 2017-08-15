@@ -1,0 +1,23 @@
+<ion-modal-view class="members-filter-modal">
+  <ion-content>
+    <ul class="list">
+      <div class="item item-icon-right"
+           on-tap="PanelHomeCtrl.selectMember('all')">
+        全部成员
+        <i class="icon icon-tick"
+           ng-if="PanelHomeCtrl.selectedMembers.all">
+        </i>
+      </div>
+      <div class="item item-avatar item-icon-right"
+           ng-repeat="member in PanelHomeCtrl.membersMap track by member._id"
+           on-tap="PanelHomeCtrl.selectMember(member._id)"
+           ng-if="member._id != 0">
+        <img class="avatar" ng-src="{{member.avatarUrl}}">
+        <h2>{{member.name}}</h2>
+        <i class="icon icon-tick"
+           ng-if="member.isSelected">
+        </i>
+      </div>
+    </ul>
+  </ion-content>
+</ion-modal-view>

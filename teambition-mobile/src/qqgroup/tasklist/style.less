@@ -1,0 +1,243 @@
+// Global reference
+@import "../../less/reference.less";
+
+ion-content.has-bottom-bar {
+  bottom: 50px;
+}
+.tasklist-view {
+  border-top: 1px solid @tableBorder;
+  .tasks-list {
+    background-color: #f7f7f7;
+    z-index: 233;
+    .item-divider {
+      height: 32px;
+      font-size: 14px;
+      color: @grayDark;
+      padding-top: 5px;
+      margin-bottom: 1px;
+      background-color: @dropdownBackgroundHover;
+
+      .display-toogle {
+        float: right;
+      }
+      &.half-divider {
+        height: 15px;
+        min-height: 15px;
+        padding: 0;
+        &:first-child {
+          position: relative;
+          z-index: 233;
+        }
+      }
+    }
+    .item {
+      &.item-notify {
+        min-height: 40px;
+        height: 40px;
+        background: @blue;
+        color: white;
+        padding: 0;
+        position: relative;
+        top: -2px;
+        &.icon-right:before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          top: 0;
+          left: 0;
+          right: 0;
+          background-color: @paginationBorder;
+        }
+
+        .icon {
+          position: absolute;
+          right: 20px;
+          top: 10px;
+          &:before {
+            font-size: 16px;
+            color: @grayLight;
+          }
+        }
+        .notify-text {
+          font-size: 14px;
+          margin-left: 40px;
+          line-height: 40px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          text-align: center;
+          .send-notify {
+            font-weight: 700;
+          }
+        }
+      }
+      &.task-create-btn {
+        padding: 8px;
+        color: @blue;
+        text-align: center;
+        font-size: 15px;
+        height: 50px;
+        line-height: 36px;
+        i.icon-plus {
+          vertical-align: top;
+          margin-top: -1px;
+          &:before {
+            color: @blue;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .task-list {
+      margin-bottom: -2px;
+      padding-bottom: 0;
+      background-color: white;
+      .item-wrap {
+        &.last-stage {
+          z-index: -10;
+          &.ng-enter {
+            animation-name: slideInDown;
+          }
+          &.ng-leave {
+            animation-name: slideOutUp;
+          }
+        }
+      }
+
+      .task-item {
+        height: 50px;
+        &:after {
+          content: '';
+          left: 15px;
+          right: 0;
+          bottom: 1px;
+          height: 1px;
+          position: absolute;
+          background-color: @navTabBackground;
+        }
+
+        &.task-priority:before {
+          content: '';
+          width: 5px;
+          height: 50px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+
+        &.task-priority.task-priority-high:before {
+          background-color: @orange;
+        }
+
+        &.task-priority.task-priority-urgent:before {
+          background-color: @red;
+        }
+
+        &.task-has-done {
+          opacity: 0.7;
+          font-weight: lighter;
+          color: @grayDark;
+        }
+
+        .task-icon:before {
+          color: #929292;
+        }
+
+        .task-content {
+          margin-top: 2px;
+          margin-right: 40px;
+
+          .task-title {
+            max-width: 90%;
+            font-size: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+            bottom: 2px;
+          }
+
+          &.task-has-bage {
+            margin-top: -5px;
+
+            .task-title {
+              margin-bottom: -6px;
+            }
+
+            .bages {
+              position: relative;
+              time {
+                font-size: 11px;
+                color: @blue;
+
+                &.task-over-due {
+                  color: @red;
+                }
+              }
+
+              i.icon {
+                display: inline-block;
+                position: relative;
+                margin-left: -12px;
+                margin-right: -5px;
+                line-height: 12px;
+                top: 2px;
+
+                &:before {
+                  font-size: 13px;
+                }
+
+                &:first-child {
+                  margin-left: -20px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .task-avatar {
+        top: 10px;
+        left: auto;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-size: cover;
+      }
+    }
+  }
+
+  .bottom-bar {
+    position: absolute;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-top: 1px solid @grayLight;
+    background-color: @dropdownBackgroundHover;
+
+    .container {
+      float: right;
+
+      & > * {
+        display: inline-block;
+        height: 50px;
+        font-size: 15px;
+        color: @gray;
+        padding: 14px;
+
+        &:not(:last-child):after {
+          content: '';
+          width: 1px;
+          height: 28px;
+          position: absolute;
+          background-color: @grayLight;
+          bottom: 11px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

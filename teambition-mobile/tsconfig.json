@@ -1,0 +1,16 @@
+{
+  "version": "1.8.0",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules",
+    "tools/build"
+  ],
+  "compileOnSave": false
+}

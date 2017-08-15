@@ -1,0 +1,59 @@
+// Global reference
+@import "../../../less/reference.less";
+
+.edit-involve-view {
+  border-top: 1px solid @tableBorder;
+  .divider {
+    margin-left: 60px;
+  }
+  .item {
+    &.item-avatar {
+      min-height: 50px;
+      padding: 0 54px 0 60px;
+      .item-image {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        top: 10px;
+      }
+      h2 {
+        line-height: 50px;
+      }
+    }
+    &.item-toggle {
+      i.icon {
+        left: 15px;
+        &.icon-lock {
+          &:before {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  .has-footer {
+    bottom: 65px;
+  }
+  .footer {
+    height: 65px;
+    background: none;
+    border-top: 1px solid #f2f2f2;
+    .list {
+      width: 100%;
+      .choose-text {
+        position: relative;
+        top: 3px;
+      }
+      .button {
+        float: right;
+        position: relative;
+        bottom: 10px;
+        width: 100px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        left: 10px;
+      }
+    }
+  }
+}

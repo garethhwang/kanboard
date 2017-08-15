@@ -1,0 +1,38 @@
+// Global reference
+@import "../../../less/reference.less";
+
+.event-panel-content {
+  .list {
+    .item {
+      min-height: 76px;
+      .divider {
+        width: 95%;
+      }
+      .event-time {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        white-space: normal;
+        font-size: 12px;
+      }
+      .event-content {
+        margin-left: 55px;
+        p {
+          line-height: 20px;
+          &.single-title {
+            line-height: 38px;
+          }
+        }
+      }
+    }
+    .item-divider {
+      min-height: 20px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      .event-group-date {
+        font-size: 12px;
+        color: @gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+// Global reference
+@import "../../less/reference.less";
+
+.detail-view {
+  background: #f7f7f7;
+  border-top: 1px solid @tableBorder;
+  .divider {
+    margin-left: 60px;
+  }
+  .involve-wrap {
+    color: @grayDarker;
+    overflow: hidden;
+    .item.detail-involves {
+      height: 48px;
+      .member-name-wrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 95%;
+        display: inline-block;
+        position: relative;
+        bottom: 3px;
+        line-height: 26px;
+      }
+    }
+  }
+  &.big-footer {
+    & > ion-content {
+      bottom: 162px;
+    }
+    & > ion-footer-bar {
+      height: 162px;
+    }
+    .item-input-wrapper {
+      margin-bottom: 120px;
+    }
+  }
+  .detail-footer {
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.15);
+    border: none;
+    .detail-footer-wrap {
+      width: 100%;
+      .detail-button {
+        color: #aaaaaa;
+        font-size: 16px;
+        width: 33%;
+        height: 30px;
+        text-align: center;
+        margin-top: 2px;
+        border-right: solid 1px @grayLight;
+        float: left;
+        &:last-child {
+          border-right: none;
+          i {
+            color: white;
+            background-color: #aaaaaa;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            line-height: 20px;
+            margin-top: 4px;
+            font-size: 16px;
+          }
+        }
+        i {
+          line-height: 30px;
+        }
+        .button-text {
+          position: relative;
+          bottom: 1px;
+          left: 2px;
+        }
+      }
+    }
+  }
+  .list {
+    i:before {
+      font-size: 24px;
+    }
+  }
+}
+
+.button.button-positive {
+  background-color: @blue;
+  &.activated {
+    background-color: @blue;
+  }
+}

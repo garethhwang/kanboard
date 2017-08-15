@@ -1,0 +1,40 @@
+<ion-view class="comment-view" ng-controller="CommentView as CommentCtrl">
+  <div class="item-comment">
+    <div class="item item-input-wrapper">
+      <div class="divider"></div>
+      <textarea type="text" placeholder="输入评论"
+                ng-model="CommentCtrl.comment"
+                auto-focus>
+      </textarea>
+    </div>
+    <i class="icon icon-paperclip"
+       on-tap="CommentCtrl.chooseFiles()"></i>
+    <div class="item item-avatar item-upload"
+         ng-repeat="work in CommentCtrl.fileContent track by $index">
+      <img class="item-thumbnail" ng-if="work.content.thumbnail" ng-src="{{work.content.thumbnail}}">
+      <div class="file-background {{work.content.fileType}}" ng-if="!work.content.thumbnail">
+        <span ng-bind="work.content.fileType" class="item-fileType {{work.content.class}}"></span>
+      </div>
+      <div ng-bind="work.content.name"></div>
+      <div class="progress" ng-hide="work.progress == '100%'">
+        <div class="progress-bar"
+             ng-style="{'width': work.progress}"></div>
+      </div>
+      <div ng-show="work.progress == '100%'">
+        上传完成
+      </div>
+      <div class="divider" ng-if="!$last"></div>
+      <span class="item-file-name" ng-bind="work.fileName"></span>
+    </div>
+    <div class="item comment-images">
+      <div class="comment-image" ng-repeat="item in CommentCtrl.images">
+        <img ng-src="{{item.url}}">
+        <i class="icon ion-ios-close comment-image-close" on-tap="CommentCtrl.removeImage($index)"></i>
+      </div>
+    </div>
+    <div class="button button-block button-positive"
+         on-tap="CommentCtrl.addComment()">
+         发送
+    </div>
+  </div>
+</ion-view>

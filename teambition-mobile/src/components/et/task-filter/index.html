@@ -1,0 +1,65 @@
+<div class="list tasks-list-filter tasks-list-filter-header">
+  <div class="item item-group-selector" (tap)="it.closeTaskFilter">
+    <div class="label">任务分组</div>
+    <div class="selector">
+      <span class="group-name">{{it.tasklistSelected.title}}</span>
+      <i class="icon ion-arrow-up-b"></i>
+    </div>
+  </div>
+</div>
+
+<div class="list tasks-list-filter tasks-list-filter-content animated {{it.ETtemplate.animateClass}}">
+  <div class="item item-divider">
+    智能分组
+  </div>
+
+  <a class="item item-icon-left item-auto-group item-icon-right" (tap)="it.chooseSmartlist('notAssigned')">
+    <i class="icon icon-circle-user"></i>
+    <span>待认领任务</span>
+    [#if (it.tasklistSelected._id === 'notAssigned')]
+      <i class="icon icon-tick-thin"></i>
+    [/#if]
+  </a>
+
+  <a class="item item-icon-left item-auto-group item-icon-right" (tap)="it.chooseSmartlist('notDone')">
+    <i class="icon icon-checkbox-thin"></i>
+    <span>未完成任务</span>
+    [#if (it.tasklistSelected._id === 'notDone')]
+      <i class="icon icon-tick-thin"></i>
+    [/#if]
+  </a>
+
+  <a class="item item-icon-left item-auto-group item-icon-right" (tap)="it.chooseSmartlist('done')">
+    <i class="icon icon-checkbox-checked"></i>
+    <span>已完成任务</span>
+    [#if (it.tasklistSelected._id === 'done')]
+      <i class="icon icon-tick-thin"></i>
+    [/#if]
+  </a>
+
+  <div class="item item-divider">
+    任务分组
+  </div>
+
+  [#for item, index in it.tasklists]
+    <a class="item item-icon-left item-task-group item-icon-right"
+       (tap)="it.chooseTasklist(item._id)">
+      <i class="icon icon icon-sharp"></i>
+      <div class="task-group-content[#if item.description] has-description[/#if]">
+        <span class="task-group-name">{{item.title}}</span>
+        <span class="task-group-description"
+              style="[#if !item.description]display:none;[/#if]">
+          {{item.description}}
+        </span>
+      </div>
+      [#if item._id === it.tasklistSelected._id]
+        <i class="icon icon-tick-thin"></i>
+      [/#if]
+    </a>
+  [/#for]
+
+  <!--<a class="item item-icon-left item-task-group-edit" href="#">
+    <i class="icon icon-pencil"></i>
+    编辑任务分组
+  </a>-->
+</div>

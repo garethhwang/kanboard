@@ -1,0 +1,30 @@
+<ion-view ng-controller="SubtaskView as SubtaskCtrl" class="subtaskView">
+  <ion-content>
+    <div class="list subtasks-wrap"
+         ng-class="{'has-min-height': !SubtaskCtrl.subtasks.length}">
+      <div ng-repeat="subtask in SubtaskCtrl.subtasks"
+           class="item item-icon-left"
+           on-tap="SubtaskCtrl.openDetail(subtask._id)">
+        <i class="icon"
+           ng-class="{'icon-checkbox-thin': !subtask.isDone, 'icon-checkbox-ios-checked': subtask.isDone}"
+           on-tap="SubtaskCtrl.doSubTask(subtask)">
+        </i>
+        <span ng-bind="subtask.content"></span>
+        <img class="subtask-avatar" ng-src="{{subtask.executor.avatarUrl || SubtaskCtrl.nobodyUrl}}">
+        <div class="divider" ng-if="!$last"></div>
+      </div>
+      <div ng-if="!SubtaskCtrl.subtasks.length"
+           class="empty-warn subtask">
+      </div>
+      <div ng-if="!SubtaskCtrl.subtasks.length"
+           class="empty-warn empty-warn-text">
+        <p>将任务分解为多个子任务</p>
+        <p>每个子任务可单独设置执行者和截止时间</p>
+      </div>
+    </div>
+    <div class="button button-block button-positive"
+         on-tap="SubtaskCtrl.openCreate()">
+      添加子任务
+    </div>
+  </ion-content>
+</ion-view>

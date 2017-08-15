@@ -1,0 +1,42 @@
+<ion-view ng-controller="EditDuedateView as EditDuedateCtrl" class="edit-duedate-view">
+  <ion-content>
+    <ul class="list ionic">
+      <li class="item item-toggle">
+        截止日期
+        <label class="toggle toggle-balanced">
+          <input type="checkbox"
+                 ng-model="EditDuedateCtrl.hasDueDate"
+                 ng-change="EditDuedateCtrl.resetDueDate()">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <div class="divider"></div>
+      </li>
+      <label class="item item-input">
+        <span ng-bind="EditDuedateCtrl.displayDuedate | formatDate : 'll'"
+              ng-if="EditDuedateCtrl.displayDuedate"
+              class="input-label"></span>
+        <div class="date-wrap">
+          <span class="label-date-hour"
+                ng-bind="EditDuedateCtrl.displayDuedate | formatDate : 'a HH:MM'"
+                ng-if="EditDuedateCtrl.displayDuedate"></span>
+          <span ng-if="!EditDuedateCtrl.displayDuedate">暂未设置截止日期</span>
+          <input type="date"
+                 class="input-date-year"
+                 ng-model="EditDuedateCtrl.displayDuedate"
+                 ng-model-options="{ getterSetter: true }"
+                 ng-disabled="!EditDuedateCtrl.hasDueDate">
+          <input type="datetime-local"
+                 class="input-date-hour"
+                 ng-model="EditDuedateCtrl.displayDuedate"
+                 ng-model-options="{ getterSetter: true }">
+        </div>
+      </label>
+      <div class="button button-block button-positive"
+           on-tap="EditDuedateCtrl.updateDueDate()">
+           确认
+      </div>
+    </ul>
+  </ion-content>
+</ion-view>

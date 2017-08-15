@@ -1,0 +1,108 @@
+// Global reference
+@import "../../../less/reference.less";
+
+.task-detail.list {
+  margin-bottom: 0;
+  border-top: solid 1px #DDD;
+  .task-name-wrap{
+    overflow: hidden;
+    background-color: @dropdownBackgroundHover;
+    .item {
+      background-color: @dropdownBackgroundHover;
+    }
+    .task-belong{
+      font-size: 14px;
+      color: @grayDark;
+      height: 44px;
+      line-height: 44px;
+      padding: 0 0 0 14px;
+    }
+    .task-content {
+      white-space: normal;
+      min-height: 40px;
+      color: black;
+      span {
+        font-size: 20px;
+      }
+      .task-content-input {
+        border: none;
+        background: @dropdownBackgroundHover;
+        position: absolute;
+        width: 80%;
+        top: 10px;
+        height: 24px;
+        line-height: 25px;
+        font-size: 20px;
+        padding: 0;
+      }
+    }
+    .icon {
+      height: 46px;
+    }
+  }
+  .task-info-wrap,
+  .task-more-wrap,
+  .involve-wrap {
+    color: @grayDarker;
+    overflow: hidden;
+  }
+  .task-info-wrap{
+    margin-top: 20px;
+    .item-detail-avatar{
+      padding:12px 16px;
+      height: 48px;
+    }
+  }
+  .item {
+    border: none;
+    .item-value {
+      float: right;
+      max-width: 60%;
+      color: @darkTextColor;
+      margin-right: 5px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .item-content,
+    p {
+      overflow: initial;
+      text-overflow: initial;
+      white-space: normal;
+    }
+  }
+  .item-icon-right {
+    padding-right: 30px;
+  }
+  .item-taks-note {
+    border-bottom: 0;
+    min-height: 50px;
+  }
+  .task-note {
+    white-space: normal;
+    display: block;
+    margin-left: 20px;
+    ol {
+      list-style-type: decimal;
+    }
+    ul {
+      list-style: initial;
+      margin-left: 15px;
+    }
+    p {
+      margin-right: 2px;
+    }
+  }
+}
+.item-detail-avatar {
+  .task-executor-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+  }
+  .task-executor-name {
+    position: relative;
+    bottom: 5px;
+    left: 15px;
+    color: @grayDark;
+  }
+}
