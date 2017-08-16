@@ -13,7 +13,6 @@ $state = "ggzs";
 
 $button[] = array('type' => "view",
         'name' => "工程管理助手",
-        //json_encode('工程管理助手',JSON_UNESCAPED_UNICODE),
         'url'  => $weixin->oauth2_authorize("m.jinxingjk.com", $scope, $state)
     );
 

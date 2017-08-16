@@ -117,7 +117,7 @@ class weixinapi
 
         $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$this->access_token&openid=$openid";
         $output = $this->wechat_http_request($url);
-        $res = json_decode($output,true);
+        $res = json_decode(json_encode($output),true);
         return $res;
     }
 
