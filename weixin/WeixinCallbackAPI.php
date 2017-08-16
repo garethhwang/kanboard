@@ -6,10 +6,10 @@
  * Time: 15:29
  */
 
-require_once('config.php');
+require_once('../config.php');
 require_once('WeixinAPI.php');
-//require_once('/home/work/www/BeJinXingJK/www/db.php');
-//use Kanboard\Core\Base;
+require_once('MysqlAPI.php');
+
 
 class wechatcallbackapi
 {
@@ -83,15 +83,16 @@ class wechatcallbackapi
         switch ($object->Event)
         {
             case "subscribe":
-                /*$user = $this->db->table(kb_wechat_user::Table)->eq('openid', $openid)->findOne();
-                $user = DB::table("wechat_user")->where('openid','=',$openid)->get()->first();
-                //$user = $this->WeixinModel->getWechatUser($openid);
-                $user = json_decode(json_encode($user),true);
+                $db = new class_mysql();
+                $result = "SELECT * FROM kb_wechat_user WHERE openid = '".$openid."'";
+                $query = $db->query_array($result);
+                $user = json_decode(json_encode($query),true);
                 if(empty($user)){
                     $weixin = new weixinapi();
                     $user_info = $weixin->get_wechat_user($openid);
-                    $bool=DB::table("wechat_user")->insert(['subscribe'=>"1", 'openid'=>$user_info["openid"], 'nickname'=>$user_info["nickname"],'sex'=>$user_info["sex"],'city'=>$user_info["city"],'country'=>$user_info["country"],'province'=>$user_info["province"],'wlanguage'=>$user_info["language"],'headimgurl'=>$user_info["headimgurl"],'date_added'=>date('Y-m-d H:i:s',time()+8*3600) ]);
-                }*/
+                    $sql = "INSERT INTO kb_wechat_user (subscribe, openid, nickname, sex, city, country, province, wlanguage, headimgurl, date_added, ) VALUES ('1', '".$user_info["openid"]."', '".$user_info["nickname"]."', '".$user_info["sex"]."', '".$user_info["city"]."', '".$user_info["country"]."','".$user_info["province"]."', '".$user_info["language"]."', '".$user_info["headimgurl"]."', '".date('Y-m-d H:i:s')."')";
+                    $db->query($sql);
+                }
                 $content = "您好，感谢关注工管助手";
                 break;
 

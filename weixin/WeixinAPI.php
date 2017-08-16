@@ -6,7 +6,7 @@
  * Time: 15:28
  */
 
-require_once('config.php');
+require_once('../config.php');
 
 class weixinapi
 {

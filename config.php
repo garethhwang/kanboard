@@ -237,3 +237,9 @@ define('HTTP_VERIFY_SSL_CERTIFICATE', true);
 
 // TOTP (2FA) issuer name
 define('TOTP_ISSUER', 'Kanboard');
+
+
+//weixin config
+define('APPID',         "wxe3433de1fa52f001");
+define('APPSECRET',     "6176e17ad1618e394d966db253cd83cf");
+define('TOKEN',         "ggzs");
