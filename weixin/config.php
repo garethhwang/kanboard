@@ -6,6 +6,6 @@
  * Time: 15:32
  */
 
-define('APPID',         "wx3f88af80a4c0a09d");   //tj 测试号
-define('APPSECRET',     "97b5456aa85b87580406c0013d820e55");
+define('APPID',         "wxe3433de1fa52f001");   //tj 测试号
+define('APPSECRET',     "6176e17ad1618e394d966db253cd83cf");
 define('TOKEN',         "ggzs");
