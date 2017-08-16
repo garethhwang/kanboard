@@ -5,7 +5,7 @@
  * Date: 2017/8/16
  * Time: 15:29
  */
-
+date_default_timezone_set('PRC');
 require_once('../config.php');
 require_once('WeixinAPI.php');
 require_once('MysqlAPI.php');
