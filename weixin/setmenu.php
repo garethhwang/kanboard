@@ -12,7 +12,7 @@ $scope = "snsapi_userinfo";
 $state = "ggzs";
 
 $button = array('type' => "view",
-        'name' => utf8_encode("工程管理助手"),
+        'name' => json_encode('工程管理助手',JSON_UNESCAPED_UNICODE),
         'url'  => $weixin->oauth2_authorize("m.jinxingjk.com", $scope, $state)
     );
 
