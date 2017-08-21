@@ -92,9 +92,9 @@ class wechatcallbackapi
                     $user_info = $weixin->get_wechat_user($openid);
                     //$user_info = json_encode($user_info);
                     //if($f  = file_put_contents($log_file, $user_info["nickname"]."2222" , FILE_APPEND)){}
-                    $sql = "INSERT INTO kb_wechat_user (subscribe, openid, nickname, sex, city, country, province, wlanguage, headimgurl, date_added, ) VALUES ('1', '".$user_info["openid"]."', '".$user_info["nickname"]."', '".$user_info["sex"]."', '".$user_info["city"]."', '".$user_info["country"]."','".$user_info["province"]."', '".$user_info["language"]."', '".$user_info["headimgurl"]."', '".date('Y-m-d H:i:s')."')";
-                    $aa = $db->query($sql);
-                    if($f  = file_put_contents($log_file, $sql."2222" , FILE_APPEND)){}
+                    $sql = "INSERT INTO kb_wechat_user (subscribe, openid, nickname, sex, city, country, province, wlanguage, headimgurl, date_added) VALUES ('1', '".$user_info["openid"]."', '".$user_info["nickname"]."', '".$user_info["sex"]."', '".$user_info["city"]."', '".$user_info["country"]."','".$user_info["province"]."', '".$user_info["language"]."', '".$user_info["headimgurl"]."', '".date('Y-m-d H:i:s')."')";
+                    $db->query($sql);
+
                 }
                 $content = "工程师您好，感谢关注工管助手";
                 break;
